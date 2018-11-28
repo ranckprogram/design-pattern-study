@@ -1,0 +1,23 @@
+<script>
+    function Person (name, age, sex) {
+        this.name = name
+        this.age = age
+        this.sex = sex
+    }
+
+    Person.prototype.getName = function () {
+        return this.name
+    }
+
+    Person.prototype.getAge = function () {
+        return this.age
+    }
+
+    Person.prototype.getSex = function () {
+        return this.sex
+    }
+
+    var ranck = new Person('ranck', 25, 'man')
+
+    console.dir(ranck.age)
+</script>
