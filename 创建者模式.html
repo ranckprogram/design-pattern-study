@@ -1,0 +1,31 @@
+<script>
+    function Student() {
+
+    }
+
+    function Builder() {
+        var student = new Student()
+        this.setName = function (name) {
+            student.name = name
+        }
+        this.setAge = function (age) {
+            student.age = age
+        }
+        this.getName = function () {
+            return student.name
+        }
+        this.getAge = function () {
+            return student.age
+        }
+        this.build = function () {
+            return student
+        }
+    }
+
+    var s = new Builder()
+    s.setAge(25)
+    s.setName('ranck')
+    var ranck = s.build()
+
+    console.dir(ranck)  // Student [ranck]
+</script>
