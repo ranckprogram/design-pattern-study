@@ -1,6 +1,6 @@
 <script>
     // 构造简化赋值这种写法以后归类到，js奇淫招式中
-    function Student (options) {
+    function Student(options) {
         var self = this
         Object.keys(options).forEach(function (item) {
             self[item] = options[item]
@@ -14,4 +14,44 @@
     })
 
     console.dir(s)
+
+    // 工厂模式，按照要求可生成几类对象
+    function Programer(name, technologyStack) {
+        var self = this
+        this.name = name
+        Object.keys(technologyStack).forEach(function (item) {
+            self[item] = technologyStack[item]
+        })
+    }
+
+    // var s = new Programer({
+    //     name: 'ranck',
+    //     age: 25,
+    //     sex: 'man'
+    // })
+
+    // console.dir(s)
+
+    /**
+     ^
+     **/
+    function factory(name, type) {
+        var technologyStack
+        switch (type) {
+            case 'front':
+                technologyStack = ['html', 'css', 'js']
+                break
+            case 'back':
+                technologyStack = ['node', 'mysql', 'linux']
+                break
+            default:
+                throw '暂时没有'
+        }
+        return new Programer(name, technologyStack)
+    }
+
+    var ranck  = factory('ranck', 'front')
+    var mark = factory('mark', 'back')
+    console.dir(ranck)
+    console.dir(mark)
 </script>
