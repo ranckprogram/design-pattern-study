@@ -1,0 +1,17 @@
+<script>
+    // 构造简化赋值这种写法以后归类到，js奇淫招式中
+    function Student (options) {
+        var self = this
+        Object.keys(options).forEach(function (item) {
+            self[item] = options[item]
+        })
+    }
+
+    var s = new Student({
+        name: 'ranck',
+        age: 25,
+        sex: 'man'
+    })
+
+    console.dir(s)
+</script>
