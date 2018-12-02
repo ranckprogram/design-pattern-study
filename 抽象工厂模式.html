@@ -1,0 +1,35 @@
+<script>
+    function Noodle() {
+        this.order = '我要面条'
+    }
+
+    function Rice() {
+        this.order = '我要米饭'
+    }
+
+    function noodleFactory() {
+        return new Noodle()
+    }
+
+    function riceFactory() {
+        return new Rice()
+    }
+
+
+    function abstractFood(factory) {
+        switch (factory) {
+            case 'noodle':
+                return noodleFactory
+                break
+            case 'rice':
+                return riceFactory()
+                break
+            default:
+                throw '没有这个factory'
+        }
+    }
+
+    var order = abstractFood('noodle')()  // 高阶函数
+
+    console.dir(order) // Noodle 实例
+</script>
