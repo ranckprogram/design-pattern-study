@@ -1,0 +1,21 @@
+<script>
+    function Single() {
+        if (Single.mark) {
+            return Single.mark
+        } else {
+            this.money = 1000
+            Single.mark = this
+        }
+    }
+
+    var s = new Single()
+
+    console.dir(s)
+    s.money = 30
+    console.dir(s)
+    s.money = 300
+
+    console.dir(s)
+
+
+</script>
