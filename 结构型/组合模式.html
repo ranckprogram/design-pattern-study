@@ -1,3 +1,25 @@
 <script>
-    function () {}
+
+    // 我感觉组合模式是将不同的实例化的对象组合在一起，不同的对象可以为同类，也可以不同类
+    function Component(name) {
+        this.name = name
+        this.componentList = []
+    }
+    Component.constructor = Component
+    Component.prototype = {
+        add: function(component) {
+            this.componentList.push(component)
+        },
+        remove: function(component) {
+            this.componentList.filter(component => (component !== component))
+        }
+    }
+
+    var root = new Component('leader')
+    root.add(new Component('height people'))
+    root.add(new Component('height worker'))
+    root.add(new Component('height other'))
+
+    console.dir(root)
+
 </script>
