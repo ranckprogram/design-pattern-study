@@ -22,4 +22,35 @@
 
     console.dir(root)
 
+
+
+    function People (name) {
+        this.name = name
+        this.parts = {}
+    }
+
+    People.prototype.add = function (part) {
+        console.dir(part)
+        this.parts[part.name] = part
+        // if(part in this.parts){
+        //     console.dir('已经存在', part)
+        // } else {
+        //     this.parts[part] = part
+        // }
+    }
+
+    function Organ (name) {
+        this.name = name
+        this.say = function () {
+            console.dir(this.name)
+        }
+    }
+
+    var p = new People('ranck')
+
+    p.add(new Organ('hand'))
+    p.add(new Organ('foot'))
+
+    console.dir(p)
+
 </script>
