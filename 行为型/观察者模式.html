@@ -1,0 +1,32 @@
+<script>
+    function Observer (name) {
+        this.name = name
+        this.update = function (message) {
+            console.dir(message)
+        }
+    }
+
+    function Subject (name) {
+        this.name = name
+        this.observerList = []
+    }
+
+    Subject.prototype.addObserver = function (observer) {
+        this.observerList.push(observer)
+    }
+
+    Subject.prototype.notify = function (message) {
+        this.observerList.forEach(observer => {
+            observer.update(message)
+        })
+    }
+
+    var anchor = new Subject('ranck')
+    anchor.addObserver(new Observer('sofy'))
+    anchor.addObserver(new Observer('carry'))
+
+    anchor.notify('我开播了，大家请关注我哟')
+
+    console.dir(anchor)
+
+</script>
