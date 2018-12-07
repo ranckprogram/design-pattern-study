@@ -1,3 +1,32 @@
 <script>
+    function Room (name) {
+        this.name = name
+    }
+    Room.prototype.show = function () {
+        console.dir(this)
+    }
+
+    var renovation = {
+        addMetope: function (color) {
+            this.metope = color
+            return this
+        },
+        addFloor: function (floor){
+            this.floor = floor
+            return this
+        },
+        addSofa: function (sofa) {
+            this.sofa = sofa
+            return this
+        }
+    }
+    var room = new Room('ranck')
+
+    for (item in renovation) {
+        Room.prototype[item] = renovation[item]
+        room[item]()
+    }
+
+    room.show()
     
 </script>
