@@ -1,5 +1,5 @@
 <script>
-    function Room (name) {
+    function Room(name) {
         this.name = name
     }
     Room.prototype.show = function () {
@@ -7,26 +7,24 @@
     }
 
     var renovation = {
-        addMetope: function (color) {
-            this.metope = color
-            return this
+        addMetope: function (room, color = 'blue') {
+            room.metope = color
         },
-        addFloor: function (floor){
-            this.floor = floor
-            return this
+        addFloor: function (room, floor = 'small') {
+            room.floor = floor
         },
-        addSofa: function (sofa) {
-            this.sofa = sofa
-            return this
+        addSofa: function (room, sofa = 'cloth') {
+            room.sofa = sofa
         }
     }
     var room = new Room('ranck')
 
     for (item in renovation) {
-        Room.prototype[item] = renovation[item]
-        room[item]()
+        renovation[item](room)
     }
 
+    var r = new Room('ss')
+    r.show()
     room.show()
-    
+
 </script>
