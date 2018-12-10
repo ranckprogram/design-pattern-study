@@ -1,0 +1,21 @@
+<script>
+    function Light () {
+        this.state = 'off'
+
+    }
+
+    Light.prototype.toggle = function () {
+        if (this.state === 'off') {
+            this.state = 'on'
+            console.dir('灯已经打开')
+        } else {
+            this.state = 'off'
+            console.dir('灯已经关闭')
+        }
+    }
+
+    var l  = new Light()
+
+    l.toggle()
+    l.toggle()
+</script>
