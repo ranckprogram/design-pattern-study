@@ -18,4 +18,31 @@
 
     l.toggle()
     l.toggle()
+
+
+    function HeightLight () {
+        
+    }
+    HeightLight.prototype.toggle = function (state) {
+        if (typeof state === 'function' ) {
+            state()
+        }
+    }
+
+    var lightState = {
+        on: function ()　{
+            console.dir('灯打开了')
+        },
+        off: function () {
+            console.dir('关灯了')
+        },
+        half: function () {
+            console.dir('弱光')
+        }
+    }
+
+    var hl = new HeightLight()
+    hl.toggle(lightState.on)
+    hl.toggle(lightState.off)
+    hl.toggle(lightState.half)
 </script>
