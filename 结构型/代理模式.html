@@ -1,4 +1,17 @@
 <script>
+    function Household () {}
+    Household.prototype.findHouse = function () {
+        console.dir('person find host')
+    }
 
+    function Proxy (realSubject) {
+        this.realSubject = realSubject
+    }
+    Proxy.prototype.findHouse = function () {
+        this.realSubject.findHouse()
+    }
   
+    var p =new Proxy(new Household())
+    p.findHouse()
+    
 </script>

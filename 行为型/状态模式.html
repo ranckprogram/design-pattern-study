@@ -4,6 +4,8 @@
 
     }
 
+
+    // 如果有更多的状态呢，或者后续维护增加状态
     Light.prototype.toggle = function () {
         if (this.state === 'off') {
             this.state = 'on'
@@ -23,6 +25,7 @@
     function HeightLight () {
         
     }
+    
     HeightLight.prototype.toggle = function (state) {
         if (typeof state === 'function' ) {
             state()
