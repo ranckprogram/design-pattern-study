@@ -1,3 +1,33 @@
 <script>
-    
+    function render () {
+       var a = document.createElement('a')
+       a.innerText = 'ok'
+       a.href = 'javascript:;'
+       document.body.appendChild(a)
+       return a
+    }
+    // 桥接模式用于解耦
+
+
+    function getMessage () {
+        var result = {
+            name: 'ranck',
+            id: 10,
+            descripe: 'ranck is a coder'
+        }
+        console.dir(result)
+        return result
+    }
+
+    function addEvent (el, event, fn) {
+        el.addEventListener(event, fn)
+    }
+
+    window.onload = function () {
+        var a = render()
+        addEvent(a, 'click', getMessage)
+    }
+   
+
+   // 桥接模式 将多个对象联合起来
 </script>
