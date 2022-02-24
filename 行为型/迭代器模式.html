@@ -1,0 +1,27 @@
+<script>
+
+  function each(data, callback) {
+    if (Array.isArray(data)) {
+      for (const item of data) {
+        callback(item);
+      }
+
+      return;
+    }
+
+    if (typeof data === "object" && typeof data !== "null") {
+      for (const item in data) {
+        callback(data[item], item);
+      }
+    }
+  }
+
+  const obj = {
+    name: "1",
+    dd: "2"
+  }
+
+  each(obj, function (value, key) {
+    console.log(value, key)
+  })
+</script>

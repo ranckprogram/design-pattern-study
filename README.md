@@ -65,42 +65,50 @@
 
 代理模式（Proxy Pattern）中，一个类代表另一个类的功能
 
-
 ### 行为型
 
-
-
 ---
-模板模式： **相同部分父类实现，差异部分子类继承重写实现**,模板模式的体现方式是class继承
+
+模板模式： **相同部分父类实现，差异部分子类继承重写实现**,模板模式的体现方式是 class 继承
 
 ```javascript
 class Beverage {
   constructor() {
-    
+    this.init();
   }
 
   init() {
     this.fire();
     this.water();
     this.choose();
-    this.finish()
   }
 
-  fire(){
+  fire() {}
+  water() {}
 
-  }
-  water(){}
-
-  choose(){
-    throw new Error("子类必须实现choose方法")
+  choose() {
+    throw new Error("子类必须实现choose方法");
   }
 
-  finishi() {
-    console.log(this.type, "ok")
+  finish() {
+    console.log(this.type, "ok");
   }
 }
 
+class Tea extends Beverage {
+  choose() {
+    this.type = "tea";
+  }
+}
+
+const tea = new Tea();
+
+tea.finish();
+
 ```
+
+使用场景思考：
+
 
 
 
@@ -137,8 +145,27 @@ context.setState(new State1());
 context.action();
 ```
 
+---
 
+迭代器模式： 优化可遍历的集合，美化 for 循环
 
+```javascript
+function each(data, callback) {
+  if (Array.isArray(data)) {
+    for (const item of data) {
+      callback(item);
+    }
+
+    return;
+  }
+
+  if (typeof data === "object" && typeof data !== "null") {
+    for (const item in data) {
+      callback(data[item], item);
+    }
+  }
+}
+```
 
 ### 问题
 
