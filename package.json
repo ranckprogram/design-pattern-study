@@ -1,0 +1,24 @@
+{
+  "name": "design-pattern-study",
+  "version": "1.0.0",
+  "description": "设计模式的名称，基本定义，分类，使用场景思考，和自身的工作中结合，近似的模式分析",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranckprogram/design-pattern-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranckprogram/design-pattern-study/issues"
+  },
+  "homepage": "https://github.com/ranckprogram/design-pattern-study#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "typescript": "^4.6.2"
+  }
+}
