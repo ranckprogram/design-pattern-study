@@ -1,7 +1,8 @@
 {
   "files": [
     "ts-design-patterns/main.ts",
-    "ts-design-patterns/factory/index.ts"
+    "ts-design-patterns/factory/index.ts",
+    "ts-design-patterns/abstract/index.ts"
   ],
   "compilerOptions": {
     "noImplicitAny": true,

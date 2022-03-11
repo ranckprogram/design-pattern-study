@@ -37,3 +37,5 @@ function createArmsFactory(name: string) {
 const akmone = createArmsFactory("akm");
 
 akmone.shoot();
+
+console.log(1.233)
