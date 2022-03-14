@@ -84,3 +84,41 @@ console.log(shapFactory);
 const rect = shapFactory.getShap("Rect");
 
 console.log(rect.draw());
+
+function add<T>(a: T, b: T) {
+  if (typeof a === "string") {
+    return `${a}${b}`;
+  }
+  if (typeof a === "number" && typeof b === "number") {
+    return a + b;
+  }
+  if (typeof a === "boolean" && typeof b === "boolean") {
+    return !!(a && b);
+  }
+
+  return null;
+}
+
+console.log(add(1, 4));
+console.log(add("1", "4"));
+console.log(add(false, true));
+console.log(add<number>(1, 41));
+
+class User {
+  public name: string;
+}
+
+class MySql<T> {
+  public list: Array<T> = [];
+  add(item: T) {
+    this.list.push(item);
+  }
+}
+
+const user = new User();
+
+const sql = new MySql<User>();
+
+sql.add(user);
+
+console.log(sql);

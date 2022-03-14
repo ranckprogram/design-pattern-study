@@ -16,7 +16,11 @@ gulp.task("runAbstract", function () {
   return run("node dist/abstract/index.js").exec();
 });
 
+gulp.task("runEach", function () {
+  return run("node dist/each/index.js").exec();
+});
+
 gulp.watch(
   "ts-design-patterns/**/*.ts",
-  gulp.series("default", "run", "runAbstract")
+  gulp.series("default", "run", "runAbstract", "runEach")
 );
