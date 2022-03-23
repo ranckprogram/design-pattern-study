@@ -3,7 +3,8 @@
     "ts-design-patterns/main.ts",
     "ts-design-patterns/factory/index.ts",
     "ts-design-patterns/abstract/index.ts",
-    "ts-design-patterns/each/index.ts"
+    "ts-design-patterns/each/index.ts",
+    "ts-design-patterns/bridge/index.ts"
   ],
   "compilerOptions": {
     "noImplicitAny": true,

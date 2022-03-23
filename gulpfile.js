@@ -20,7 +20,16 @@ gulp.task("runEach", function () {
   return run("node dist/each/index.js").exec();
 });
 
+gulp.task("runBridge", function () {
+  return run("node dist/bridge/index.js").exec();
+});
+
+gulp.task("runMain", function () {
+  return run("node dist/main.js").exec();
+});
+
+
 gulp.watch(
   "ts-design-patterns/**/*.ts",
-  gulp.series("default", "run", "runAbstract", "runEach")
+  gulp.series("default", "run", "runAbstract", "runEach", "runBridge", "runMain")
 );
